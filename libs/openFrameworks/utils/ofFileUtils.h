@@ -7,6 +7,12 @@
 // ofBuffer
 //----------------------------------------------------------
 
+#ifdef WIN32
+#define OF_FILEUTIL_SLASH '\\'
+#else
+#define OF_FILEUTIL_SLASH '/'
+#endif
+
 class ofBuffer{
 	
 public:

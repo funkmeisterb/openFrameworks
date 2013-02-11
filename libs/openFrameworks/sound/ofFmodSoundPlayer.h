@@ -9,6 +9,7 @@
 extern "C" {
 #include "fmod.h"
 #include "fmod_errors.h"
+#include "fmod_dsp.h"
 }
 
 //		TO DO :
@@ -52,6 +53,7 @@ class ofFmodSoundPlayer : public ofBaseSoundPlayer {
 		void setMultiPlay(bool bMp);
 		void setPosition(float pct); // 0 = start, 1 = end;
 		void setPositionMS(int ms);
+		void setLowpass(float pct); // { lowpass = pct; } // 0 or 1 = bypass
 
 		float getPosition();
 		int getPositionMS();
@@ -59,6 +61,7 @@ class ofFmodSoundPlayer : public ofBaseSoundPlayer {
 		float getSpeed();
 		float getPan();
 		float getVolume();
+		float getLowpass() { return lowpass; }
 		bool isLoaded();
 
 		static void initializeFmod();
@@ -73,10 +76,12 @@ class ofFmodSoundPlayer : public ofBaseSoundPlayer {
 		float volume; // 0 - 1
 		float internalFreq; // 44100 ?
 		float speed; // -n to n, 1 = normal, -1 backwards
+		float lowpass; // 0 - 1
 		unsigned int length; // in samples;
 
 		FMOD_RESULT result;
 		FMOD_CHANNEL * channel;
 		FMOD_SOUND * sound;
+		FMOD_DSP * lowpassDSP;
 };
 

@@ -1187,8 +1187,8 @@ bool ofDirectory::operator>=(const ofDirectory & dir){
 //------------------------------------------------------------------------------------------------------------
 string ofFilePath::addLeadingSlash(string path){
 	if(path.length() > 0){
-		if(path[0] != '/'){
-			path = "/" + path;
+		if(path[0] != OF_FILEUTIL_SLASH){
+			path = OF_FILEUTIL_SLASH + path;
 		}
 	}
 	return path;
@@ -1197,8 +1197,8 @@ string ofFilePath::addLeadingSlash(string path){
 //------------------------------------------------------------------------------------------------------------
 string ofFilePath::addTrailingSlash(string path){
 	if(path.length() > 0){
-		if(path[path.length() - 1] != '/'){
-			path += "/";
+		if(path[path.length() - 1] != OF_FILEUTIL_SLASH){
+			path += OF_FILEUTIL_SLASH;
 		}
 	}
 	return path;
@@ -1242,7 +1242,7 @@ string ofFilePath::getPathForDirectory(string path){
 
 //------------------------------------------------------------------------------------------------------------
 string ofFilePath::removeTrailingSlash(string path){
-	if(path.length() > 0 && path[path.length() - 1] == '/'){
+	if(path.length() > 0 && path[path.length() - 1] == OF_FILEUTIL_SLASH){
 		path = path.substr(0, path.length() - 1);
 	}
 	return path;
@@ -1312,7 +1312,7 @@ string ofFilePath::getCurrentWorkingDirectory(){
 		}
 		string pathOSXStr = string(pathOSX);
 		string pathWithoutApp;
-		size_t found = pathOSXStr.find_last_of("/");
+		size_t found = pathOSXStr.find_last_of(OF_FILEUTIL_SLASH);
 		pathWithoutApp = pathOSXStr.substr(0, found);
 		return pathWithoutApp;
 	#else

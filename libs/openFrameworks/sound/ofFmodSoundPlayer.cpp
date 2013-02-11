@@ -138,6 +138,8 @@ ofFmodSoundPlayer::ofFmodSoundPlayer(){
 	speed 			= 1;
 	bPaused 		= false;
 	isStreaming		= false;
+	lowpass			= 0.0f;
+	lowpassDSP		= NULL;
 }
 
 ofFmodSoundPlayer::~ofFmodSoundPlayer(){
@@ -358,6 +360,12 @@ void ofFmodSoundPlayer::play(){
 	// before we start another
 	if (!bMultiPlay){
 		FMOD_Channel_Stop(channel);
+		if (lowpassDSP != NULL)
+		{
+			// Get rid of the DSP
+			FMOD_DSP_Remove(lowpassDSP);
+			lowpassDSP = NULL;
+		}
 	}
 
 	FMOD_System_PlaySound(sys, FMOD_CHANNEL_FREE, sound, bPaused, &channel);
@@ -367,6 +375,10 @@ void ofFmodSoundPlayer::play(){
 	setPan(pan);
 	FMOD_Channel_SetFrequency(channel, internalFreq * speed);
 	FMOD_Channel_SetMode(channel,  (bLoop == true) ? FMOD_LOOP_NORMAL : FMOD_LOOP_OFF);
+	
+	FMOD_System_CreateDSPByType(sys, FMOD_DSP_TYPE_LOWPASS, &lowpassDSP);
+	FMOD_DSP_SetParameter(lowpassDSP, FMOD_DSP_LOWPASS_CUTOFF, internalFreq * lowpass);
+	FMOD_Channel_AddDSP(channel, lowpassDSP, 0);
 
 	//fmod update() should be called every frame - according to the docs.
 	//we have been using fmod without calling it at all which resulted in channels not being able
@@ -379,5 +391,30 @@ void ofFmodSoundPlayer::play(){
 // ----------------------------------------------------------------------------
 void ofFmodSoundPlayer::stop(){
 	FMOD_Channel_Stop(channel);
+}
+
+//------------------------------------------------------------
+void ofFmodSoundPlayer::setLowpass(float pct){
+	lowpass = pct;
+	if (lowpassDSP == NULL)
+	{
+		return;
+	}
+
+	if (lowpass <= 0.0f || lowpass >= 1.0f)
+	{
+		FMOD_DSP_SetBypass(lowpassDSP, true);
+	}
+	else
+	{
+		FMOD_DSP_SetParameter(lowpassDSP, FMOD_DSP_LOWPASS_CUTOFF, lowpass * internalFreq);
+		//ofLog(OF_LOG_NOTICE, "New lowpass value: " + ofToString(lowpass * internalFreq) + "Hz");
+		FMOD_BOOL bypass = 0;
+		FMOD_DSP_GetBypass(lowpassDSP, &bypass);
+		if (bypass == 1)
+		{
+			FMOD_DSP_SetBypass(lowpassDSP, false);
+		}
+	}
 }
 

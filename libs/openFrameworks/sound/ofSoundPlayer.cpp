@@ -212,3 +212,10 @@ float ofSoundPlayer::getVolume(){
 		return 0;
 	}
 }
+
+//--------------------------------------------------------------------
+void ofSoundPlayer::setLowpass(float pct){
+	if( player != NULL ){
+		player->setLowpass(pct);
+	}
+} 

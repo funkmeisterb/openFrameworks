@@ -37,4 +37,5 @@ public:
 	virtual bool isLoaded() = 0;
 	virtual float getVolume() = 0;
 	
+	virtual void setLowpass(float pct) = 0; // 0 = start, 1 = end;
 };

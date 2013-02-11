@@ -1,3 +1,12 @@
 [submodule "apps/projectGenerator/projectGeneratorSimple"]
 	path = apps/projectGenerator/projectGeneratorSimple
 	url = https://github.com/ofZach/projectGeneratorSimple.git
+[submodule "addons/ofxTactoSonixTools"]
+	path = addons/ofxTactoSonixTools
+	url = https://github.com/funkmeisterb/ofxTactoSonixTools.git
+[submodule "apps/IDMIL/tactoSonix"]
+	path = apps/IDMIL/tactoSonix
+	url = https://github.com/funkmeisterb/tactosonix.git
+[submodule "addons/ofxTextSuite"]
+	path = addons/ofxTextSuite
+	url = https://github.com/funkmeisterb/ofxTextSuite.git

@@ -68,6 +68,7 @@ class ofSoundPlayer : public ofBaseSoundPlayer {
 		void setPosition(float pct); // 0 = start, 1 = end;
 		void setPositionMS(int ms);
 		int getPositionMS();
+		void setLowpass(float pct);
 
 		float getPosition();
 		bool getIsPlaying();
