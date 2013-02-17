@@ -10,3 +10,6 @@
 [submodule "addons/ofxTextSuite"]
 	path = addons/ofxTextSuite
 	url = https://github.com/funkmeisterb/ofxTextSuite.git
+[submodule "addons/ofxParticleEmitter"]
+	path = addons/ofxParticleEmitter
+	url = http://github.com/funkmeisterb/ofxParticleEmitter.git
