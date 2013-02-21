@@ -81,6 +81,8 @@ class ofOpenALSoundPlayer : public ofBaseSoundPlayer, public ofThread {
 
 		static float * getSystemSpectrum(int bands);
 
+		void setLowpass(float pct);
+
 	protected:
 		void threadedFunction();
 
@@ -152,6 +154,8 @@ class ofOpenALSoundPlayer : public ofBaseSoundPlayer, public ofThread {
 		vector<float> fftAuxBuffer;
 
 		bool stream_end;
+
+		float lowpass; // 0 - 1
 };
 
 #endif

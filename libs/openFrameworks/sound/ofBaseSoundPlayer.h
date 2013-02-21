@@ -9,17 +9,17 @@
 // ofBaseSoundPlayer
 //----------------------------------------------------------
 class ofBaseSoundPlayer {
-	
+
 public:
-	
+
 	ofBaseSoundPlayer(){};
 	virtual ~ofBaseSoundPlayer(){};
-	
+
 	virtual bool loadSound(string fileName, bool stream = false) = 0;
 	virtual void unloadSound() = 0;
 	virtual void play() = 0;
 	virtual void stop() = 0;
-	
+
 	virtual void setVolume(float vol) = 0;
 	virtual void setPan(float vol) = 0; // -1 = left, 1 = right
 	virtual void setSpeed(float spd) = 0;
@@ -36,6 +36,6 @@ public:
 	virtual float getPan() = 0;
 	virtual bool isLoaded() = 0;
 	virtual float getVolume() = 0;
-	
+
 	virtual void setLowpass(float pct) = 0; // 0 = start, 1 = end;
 };

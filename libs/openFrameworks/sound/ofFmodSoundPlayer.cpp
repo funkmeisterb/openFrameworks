@@ -375,7 +375,7 @@ void ofFmodSoundPlayer::play(){
 	setPan(pan);
 	FMOD_Channel_SetFrequency(channel, internalFreq * speed);
 	FMOD_Channel_SetMode(channel,  (bLoop == true) ? FMOD_LOOP_NORMAL : FMOD_LOOP_OFF);
-	
+
 	FMOD_System_CreateDSPByType(sys, FMOD_DSP_TYPE_LOWPASS, &lowpassDSP);
 	FMOD_DSP_SetParameter(lowpassDSP, FMOD_DSP_LOWPASS_CUTOFF, internalFreq * lowpass);
 	FMOD_Channel_AddDSP(channel, lowpassDSP, 0);

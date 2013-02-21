@@ -76,7 +76,7 @@ enum ofTargetPlatform{
 	#define WIN32_LEAN_AND_MEAN
 
 	#if (_MSC_VER)
-		#define NOMINMAX		
+		#define NOMINMAX
 		//http://stackoverflow.com/questions/1904635/warning-c4003-and-errors-c2589-and-c2059-on-x-stdnumeric-limitsintmax
 	#endif
 
@@ -137,9 +137,11 @@ enum ofTargetPlatform{
 
 #ifdef TARGET_LINUX
 		#define GL_GLEXT_PROTOTYPES
-        #include <unistd.h>
-		#include <glxew.h>
-		#include <GL/glew.h>
+		#include <unistd.h>
+		//#include <glxew.h>
+		//#include <GL/glew.h>
+		#include <Gem/Gem/glxew.h>
+		#include <Gem/Gem/glew.h>
 		#include <GL/gl.h>
 		#include <GL/glx.h>
 
@@ -162,8 +164,8 @@ enum ofTargetPlatform{
 #ifdef TARGET_OF_IPHONE
 	#import <OpenGLES/ES1/gl.h>
 	#import <OpenGLES/ES1/glext.h>
-	
-	#define TARGET_LITTLE_ENDIAN		// arm cpu	
+
+	#define TARGET_LITTLE_ENDIAN		// arm cpu
 #endif
 
 #ifdef TARGET_ANDROID
@@ -279,7 +281,8 @@ typedef TESSindex ofIndexType;
   #ifdef TARGET_OF_IPHONE
   	#define OF_SOUND_PLAYER_IPHONE
   #elif defined TARGET_LINUX
-  	#define OF_SOUND_PLAYER_OPENAL
+  	//#define OF_SOUND_PLAYER_OPENAL
+  	#define OF_SOUND_PLAYER_FMOD
   #elif !defined(TARGET_ANDROID)
   	#define OF_SOUND_PLAYER_FMOD
   #endif
@@ -397,7 +400,7 @@ enum ofRectMode{
 enum ofScaleMode{
     // ofScaleMode can usually be interpreted as a concise combination of
     // an ofAspectRatioMode, an ofAlignVert and an ofAlignHorz.
-    
+
     // fits the SUBJECT rect INSIDE the TARGET rect.
     // Preserves SUBJECTS's aspect ratio.
     // Final Subject's Area <= Target's Area.
@@ -426,7 +429,7 @@ enum ofImageType{
 };
 
 enum ofPixelFormat{
-	OF_PIXELS_MONO = 0, 
+	OF_PIXELS_MONO = 0,
 	OF_PIXELS_RGB,
 	OF_PIXELS_RGBA,
 	OF_PIXELS_BGRA,
@@ -447,10 +450,10 @@ enum ofBlendMode{
 	OF_BLENDMODE_SCREEN   = 5
 };
 
-//this is done to match the iPhone defaults 
+//this is done to match the iPhone defaults
 //we don't say landscape, portrait etc becuase iPhone apps default to portrait while desktop apps are typically landscape
 enum ofOrientation{
-	OF_ORIENTATION_DEFAULT = 1,	
+	OF_ORIENTATION_DEFAULT = 1,
 	OF_ORIENTATION_180 = 2,
     OF_ORIENTATION_90_LEFT = 3,
 	OF_ORIENTATION_90_RIGHT = 4,
