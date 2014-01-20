@@ -1,3 +1,6 @@
 [submodule "apps/projectGenerator/projectGeneratorSimple"]
 	path = apps/projectGenerator/projectGeneratorSimple
 	url = https://github.com/ofZach/projectGeneratorSimple.git
+[submodule "addons/ofxGifDecoder"]
+	path = addons/ofxGifDecoder
+	url = https://github.com/jesusgollonet/ofxGifDecoder.git
