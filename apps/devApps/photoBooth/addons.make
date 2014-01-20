@@ -1,6 +1,7 @@
+ofxCv
 ofxGui
-ofxKinect
 ofxNetwork
 ofxOpenCv
+ofxOsc
 ofxParticleEmitter
 ofxXmlSettings

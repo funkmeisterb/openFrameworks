@@ -185,8 +185,8 @@ public:
 	// tgfrerer: extends ofPtr facade to allow dynamic_pointer_cast, pt.1
 #if (_MSC_VER)
 	template<typename Tp1>
-	ofPtr(const ofPtr<Tp1>& __r, std::_Dynamic_tag)
-	: std::shared_ptr<T>(__r, std:::_Dynamic_tag()) { }
+	ofPtr(const ofPtr<Tp1>& __r, std::tr1::_Dynamic_tag)
+	: std::shared_ptr<T>(__r, std:::tr1::_Dynamic_tag()) { }
 #else
 	template<typename Tp1>
 	ofPtr(const ofPtr<Tp1>& __r, std::__dynamic_cast_tag)
