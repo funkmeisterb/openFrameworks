@@ -4,3 +4,6 @@
 [submodule "addons/ofxGifDecoder"]
 	path = addons/ofxGifDecoder
 	url = https://github.com/jesusgollonet/ofxGifDecoder.git
+[submodule "addons/ofxCv"]
+	path = addons/ofxCv
+	url = https://github.com/kylemcdonald/ofxCv.git
