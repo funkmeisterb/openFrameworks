@@ -4,3 +4,4 @@ ofxNetwork
 ofxOpenCv
 ofxParticleEmitter
 ofxXmlSettings
+ofxGifDecoder
