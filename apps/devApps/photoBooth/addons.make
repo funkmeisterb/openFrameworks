@@ -1,8 +1,8 @@
 ofxCv
 ofxGifDecoder
 ofxGui
-ofxKinect
 ofxNetwork
 ofxOpenCv
 ofxOsc
+ofxParticleEmitter
 ofxXmlSettings

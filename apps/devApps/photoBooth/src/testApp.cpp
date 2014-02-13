@@ -53,7 +53,7 @@ void testApp::draw(){
         int gifW = m_gifs[i].getWidth();
         int gifH = m_gifs[i].getHeight();
 		m_gifs[i].draw(i*gifW, 0);
-		ofLogVerbose("Drawing " + ofToString(i) + "\t at x=" + ofToString(m_gifs[i].getWidth()));
+		//ofLogVerbose("Drawing " + ofToString(i) + "\t at x=" + ofToString(m_gifs[i].getWidth()));
     }
 }
 
@@ -153,6 +153,7 @@ void ofxGifFileExtended::draw(int x, int y, bool drawPalette){
 	int gifW = getWidth()*m_sizeMult;
 	int gifH = getHeight()*m_sizeMult;
 	drawFrame(m_frameIndex, x, y, gifW, gifH);
+	//drawFrame(m_frameIndex, 0, 0, 60, 60);
 	
 	if (drawPalette) {
 		// draw color palette

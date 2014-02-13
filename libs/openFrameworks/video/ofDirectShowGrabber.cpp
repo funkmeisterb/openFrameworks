@@ -115,16 +115,6 @@ vector<ofVideoDevice> ofDirectShowGrabber::listDevices(){
 		ofLogNotice() << "---";
         VI.listDevices();
         ofLogNotice() << "---";
-        
-		vector <string> devList = VI.getDeviceList(); 
-        
-        for(int i = 0; i < devList.size(); i++){
-            ofVideoDevice vd; 
-            vd.deviceName = devList[i]; 
-            vd.id = i;  
-            vd.bAvailable = true; 
-            devices.push_back(vd); 
-        }
 
 	//---------------------------------
 	#endif
