@@ -9,10 +9,11 @@ set OLDDIR=%CD%
 call "C:\Program Files\Microsoft Visual Studio 10.0\VC\vcvarsall.bat"
 
 for /d %%X in (..\..\examples\*) do ( 
-
+echo Looking at folder %%X
 cd %%X
 
 	for /d %%Y in (*) do ( 
+		echo In folder %%Y
 		cd %%Y
 		
 		for %%Z in (*.sln) do (
@@ -28,3 +29,4 @@ cd %%X
 )
 
 chdir /d %OLDDIR%
+pause
