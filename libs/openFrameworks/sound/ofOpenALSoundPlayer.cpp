@@ -45,6 +45,7 @@ ofOpenALSoundPlayer::ofOpenALSoundPlayer(){
 #ifdef OF_USING_MPG123
 	mp3streamf		= 0;
 #endif
+    lowpass         = 0;
 	players.insert(this);
 }
 
@@ -461,7 +462,7 @@ bool ofOpenALSoundPlayer::loadSound(string fileName, bool is_stream){
 			alSourcei (sources[i], AL_SOURCE_RELATIVE, AL_TRUE);
 		}
 	}
-	
+
 	bLoadedOk = true;
 	return bLoadedOk;
 
@@ -677,7 +678,7 @@ int ofOpenALSoundPlayer::getPositionMS(){
 void ofOpenALSoundPlayer::setPan(float p){
 	if(sources.empty()) return;
 	p = ofClamp(p, -1, 1);
-	pan = p;	
+	pan = p;
 	if(channels==1){
 		float pos[3] = {p,0,0};
 		alSourcefv(sources[sources.size()-1],AL_POSITION,pos);
@@ -899,6 +900,11 @@ float * ofOpenALSoundPlayer::getSystemSpectrum(int bands){
 void ofOpenALSoundPlayer::runWindow(vector<float> & signal){
 	for(int i = 0; i < (int)signal.size(); i++)
 		signal[i] *= window[i];
+}
+
+// Not implemented yet
+void ofOpenALSoundPlayer::setLowpass(float pct)
+{
 }
 
 #endif
