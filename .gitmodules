@@ -13,3 +13,6 @@
 [submodule "apps/FKMB/tactosonix"]
 	path = apps/FKMB/tactosonix
 	url = https://github.com/funkmeisterb/tactosonix.git
+[submodule "addons/ofxArtnet"]
+	path = addons/ofxArtnet
+	url = https://github.com/hiroyuki/ofxArtnet.git
