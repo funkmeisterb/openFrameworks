@@ -21,4 +21,4 @@
 	url = https://github.com/arturoc/ofxGStreamer.git
 [submodule "apps/FKMB/projectGeneratorSimple"]
 	path = apps/FKMB/projectGeneratorSimple
-	url = https://github.com/ofZach/projectGeneratorSimple.git
+	url = https://github.com/funkmeisterb/projectGeneratorSimple.git
