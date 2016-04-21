@@ -5,7 +5,6 @@
 class ofApp : public ofBaseApp{
 
 	public:
-
 		void setup();
 		void update();
 		void draw();
@@ -23,6 +22,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);		
 
 		ofVideoPlayer 		fingerMovie;
-		bool                frameByframe;
+        bool                frameByframe;
 };
 
