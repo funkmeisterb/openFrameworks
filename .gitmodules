@@ -16,3 +16,9 @@
 [submodule "addons/ofxArtnet"]
 	path = addons/ofxArtnet
 	url = https://github.com/hiroyuki/ofxArtnet.git
+[submodule "addons/ofxGStreamer"]
+	path = addons/ofxGStreamer
+	url = https://github.com/arturoc/ofxGStreamer.git
+[submodule "apps/FKMB/projectGeneratorSimple"]
+	path = apps/FKMB/projectGeneratorSimple
+	url = https://github.com/ofZach/projectGeneratorSimple.git
