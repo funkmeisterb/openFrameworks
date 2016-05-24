@@ -25,3 +25,6 @@
 [submodule "apps/FKMB/mediaPlayer"]
 	path = apps/FKMB/mediaPlayer
 	url = https://github.com/funkmeisterb/mediaPlayer.git
+[submodule "addons/ofxMSAPhysics"]
+	path = addons/ofxMSAPhysics
+	url = https://github.com/memo/ofxMSAPhysics.git
