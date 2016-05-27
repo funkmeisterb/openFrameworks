@@ -7,9 +7,6 @@
 [submodule "addons/ofxParticleEmitter"]
 	path = addons/ofxParticleEmitter
 	url = https://github.com/sroske/ofxParticleEmitter.git
-[submodule "addons/ofxTextSuite"]
-	path = addons/ofxTextSuite
-	url = https://github.com/Furkanzmc/ofxTextSuite.git
 [submodule "apps/FKMB/tactosonix"]
 	path = apps/FKMB/tactosonix
 	url = https://github.com/funkmeisterb/tactosonix.git
